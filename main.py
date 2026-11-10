@@ -83,7 +83,7 @@ class QuizMasterApp:
             font=FONT_SMALL,
             bg=HEADER_BG,
             fg="#D6E4F0",
-        ).pack(anchor="w", padx=32 
+        ).pack(anchor="w", padx=32)
          
 
     def _card(self):
