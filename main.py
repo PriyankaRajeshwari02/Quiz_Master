@@ -1,4 +1,4 @@
-"""QuizMaster desktop application.
+﻿"""QuizMaster desktop application.
 
 Run this file to open the quiz:
 
@@ -8,8 +8,8 @@ Run this file to open the quiz:
 import tkinter as tk
 from tkinter import messagebox
 
-from database import CATEGORIES, Database, DatabaseError
-from quiz import QuizError, QuizSession, validate_student_name
+from app.database import CATEGORIES, Database, DatabaseError
+from app.quiz import QuizError, QuizSession, validate_student_name
 
 
 # One set of colours and fonts keeps every screen consistent.
@@ -397,3 +397,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

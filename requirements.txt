@@ -1,0 +1,2 @@
+# No external packages required.
+# Tkinter and sqlite3 come with Python 3.

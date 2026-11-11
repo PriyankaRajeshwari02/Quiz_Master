@@ -1,4 +1,4 @@
-"""SQLite storage for QuizMaster.
+﻿"""SQLite storage for QuizMaster.
 
 This module creates the local database, inserts sample questions once,
 fetches questions for a category, and saves each completed quiz result.
@@ -11,8 +11,8 @@ from datetime import datetime
 
 # Store the database file next to this script, not in the current folder.
 # That way the app still finds questions.db if it is started from another path.
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "questions.db")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB_PATH = os.path.join(BASE_DIR, "data", "questions.db")
 
 CATEGORIES = [
     "Python Programming",
@@ -434,3 +434,4 @@ class Database:
                 return row["total"]
         except sqlite3.Error as exc:
             raise DatabaseError(f"Could not count questions: {exc}") from exc
+
