@@ -92,16 +92,24 @@ class Tile(tk.Frame):
         title_color = TEXT if enabled else DISABLED_FG
         sub_color = MUTED if enabled else DISABLED_FG
 
+        wrap = 260 if align != "w" else 640
         self._labels = [make_label(self, title, 13, "bold", title_color, self._normal_bg,
-                                   wraplength=260, justify=justify)]
-        self._labels[0].pack(anchor=anchor, padx=18, pady=(16, 2), fill="x")
+                                   wraplength=wrap, justify=justify, anchor=anchor)]
+        sub = None
         if subtitle:
             sub = make_label(self, subtitle, 10, "normal", sub_color, self._normal_bg,
-                             wraplength=260, justify=justify)
-            sub.pack(anchor=anchor, padx=18, pady=(0, 16), fill="x")
+                             wraplength=wrap, justify=justify, anchor=anchor)
             self._labels.append(sub)
+
+        if align == "w":
+            # One compact row: title on the left, the small note on the right.
+            self._labels[0].pack(side="left", padx=18, pady=14)
+            if sub:
+                sub.pack(side="right", padx=18, pady=14)
         else:
-            self._labels[0].pack_configure(pady=(16, 16))
+            self._labels[0].pack(anchor=anchor, padx=18, pady=(16, 2 if sub else 16), fill="x")
+            if sub:
+                sub.pack(anchor=anchor, padx=18, pady=(0, 16), fill="x")
 
         if enabled:
             for widget in [self] + self._labels:
