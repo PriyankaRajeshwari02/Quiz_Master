@@ -1,0 +1,170 @@
+{
+  "semester": 5,
+  "subjects": [
+    {
+      "code": "BTCS501-18",
+      "name": "Database Management Systems",
+      "modules": [
+        {
+          "number": 1,
+          "title": "Database System Architecture",
+          "questions": []
+        },
+        {
+          "number": 2,
+          "title": "Relational Query Languages",
+          "questions": []
+        },
+        {
+          "number": 3,
+          "title": "Storage Strategies & Indexing",
+          "questions": []
+        },
+        {
+          "number": 4,
+          "title": "Transaction Processing",
+          "questions": []
+        },
+        {
+          "number": 5,
+          "title": "Database Security",
+          "questions": []
+        },
+        {
+          "number": 6,
+          "title": "Advanced Topics",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "code": "BTCS502-18",
+      "name": "Formal Language & Automata Theory",
+      "modules": [
+        {
+          "number": 1,
+          "title": "Introduction",
+          "questions": []
+        },
+        {
+          "number": 2,
+          "title": "Regular Languages and Finite Automata",
+          "questions": []
+        },
+        {
+          "number": 3,
+          "title": "Context-Free Languages and Pushdown Automata",
+          "questions": []
+        },
+        {
+          "number": 4,
+          "title": "Context-Sensitive Languages",
+          "questions": []
+        },
+        {
+          "number": 5,
+          "title": "Turing Machines",
+          "questions": []
+        },
+        {
+          "number": 6,
+          "title": "Undecidability & Intractability",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "code": "BTCS503-18",
+      "name": "Software Engineering",
+      "modules": [
+        {
+          "number": 1,
+          "title": "Introduction, SDLC Models & Requirements",
+          "questions": []
+        },
+        {
+          "number": 2,
+          "title": "Software Design",
+          "questions": []
+        },
+        {
+          "number": 3,
+          "title": "Software Testing & Reliability",
+          "questions": []
+        },
+        {
+          "number": 4,
+          "title": "Software Project Management",
+          "questions": []
+        },
+        {
+          "number": 5,
+          "title": "Quality Standards, Maintenance & Reuse",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "code": "BTCS504-18",
+      "name": "Computer Networks",
+      "modules": [
+        {
+          "number": 1,
+          "title": "Data Communication Components",
+          "questions": []
+        },
+        {
+          "number": 2,
+          "title": "Data Link Layer and Medium Access Sub Layer",
+          "questions": []
+        },
+        {
+          "number": 3,
+          "title": "Network Layer",
+          "questions": []
+        },
+        {
+          "number": 4,
+          "title": "Transport Layer",
+          "questions": []
+        },
+        {
+          "number": 5,
+          "title": "Application Layer",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "code": "BTES501-18",
+      "name": "Enterprise Resource Planning",
+      "modules": [
+        {
+          "number": 1,
+          "title": "Introduction",
+          "questions": []
+        },
+        {
+          "number": 2,
+          "title": "ERP Implementation",
+          "questions": []
+        },
+        {
+          "number": 3,
+          "title": "The Business Modules",
+          "questions": []
+        },
+        {
+          "number": 4,
+          "title": "The ERP Market",
+          "questions": []
+        },
+        {
+          "number": 5,
+          "title": "ERP - Present and Future",
+          "questions": []
+        }
+      ]
+    }
+  ]
+}

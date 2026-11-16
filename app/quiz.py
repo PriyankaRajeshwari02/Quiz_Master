@@ -1,98 +1,122 @@
-"""Quiz rules for QuizMaster.
+"""Quiz logic: which 10 questions go in which test, and a running quiz session.
 
-The screens in main.py collect input. This module decides whether an
-answer is valid, updates the score, and builds the final result.
+No screens and no database here, so it is easy to test.
 """
+
+import random
+
+TEST_COUNT = 10            # mock tests per module
+QUESTIONS_PER_TEST = 10    # questions in one test
+HALF = TEST_COUNT // 2     # tests 1-5 use shuffle 1, tests 6-10 use shuffle 2
+LETTERS = ("A", "B", "C", "D")
 
 
 class QuizError(Exception):
-    """Raised when the student tries to continue without a valid answer."""
+    """Raised for invalid quiz actions."""
 
 
-class QuizSession:
-    """Tracks one attempt from the first question to the result."""
+def select_test_questions(pool, module_id, test_number):
+    """Pick the 10 questions of one mock test from a module's question pool.
 
-    def __init__(self, username, category, questions):
-        if not username or not str(username).strip():
-            raise QuizError("A student name is required.")
-        if not questions:
-            raise QuizError("No questions are available for this category.")
+    Rules:
+      * The same (module, test number) ALWAYS gives the same 10 questions,
+        so a student can compare Test 3 today with Test 3 next week.
+      * Tests 1-5 use one fixed shuffle of the pool (no repeats among them).
+      * Tests 6-10 use a second, different shuffle.
+      * With a 50-question pool every question appears exactly twice.
+    """
+    if not 1 <= test_number <= TEST_COUNT:
+        raise QuizError(f"Test number must be 1 to {TEST_COUNT}.")
+    if len(pool) < QUESTIONS_PER_TEST:
+        raise QuizError(
+            f"This module needs at least {QUESTIONS_PER_TEST} questions "
+            f"(it has {len(pool)}).")
 
-        self.username = str(username).strip()
-        self.category = category
-        self.questions = questions
-        self.index = 0
-        self.score = 0
+    ordered = sorted(pool, key=lambda q: q["question_id"])
+    round_number = 0 if test_number <= HALF else 1
+    # A string seed gives the same shuffle on every computer and every run.
+    random.Random(f"quizmaster-{module_id}-{round_number}").shuffle(ordered)
 
-    @property
-    def total_questions(self):
-        return len(self.questions)
-
-    def question_number(self):
-        """Return the 1-based number of the question on screen."""
-        return self.index + 1
-
-    def is_complete(self):
-        return self.index >= self.total_questions
-
-    def current_question(self):
-        if self.is_complete():
-            raise QuizError("There are no more questions in this quiz.")
-        return self.questions[self.index]
-
-    def answer_current(self, selected_option):
-        """Check one answer, add 1 to the score if it is correct, then move on.
-
-        Returns True when this answer finishes the quiz.
-        """
-        if self.is_complete():
-            raise QuizError("This quiz is already complete.")
-
-        selected = (selected_option or "").strip().upper()
-        if selected not in ("A", "B", "C", "D"):
-            raise QuizError("Please select an option before continuing.")
-
-        correct = self.current_question()["correct_answer"].strip().upper()
-        if selected == correct:
-            self.score += 1
-
-        # Moving the index also prevents the same question from being skipped
-        # or answered a second time.
-        self.index += 1
-        return self.is_complete()
-
-    def summary(self):
-        """Return the values shown on the result screen."""
-        total = self.total_questions
-        percentage = round((self.score / total) * 100, 2) if total else 0.0
-        return {
-            "username": self.username,
-            "category": self.category,
-            "total_questions": total,
-            "correct": self.score,
-            "incorrect": total - self.score,
-            "score": self.score,
-            "percentage": percentage,
-            "message": performance_message(percentage),
-        }
+    start = ((test_number - 1) % HALF) * QUESTIONS_PER_TEST
+    return [ordered[(start + i) % len(ordered)] for i in range(QUESTIONS_PER_TEST)]
 
 
 def performance_message(percentage):
-    """Choose a short remark from the percentage score."""
-    if percentage >= 80:
-        return "Excellent. You have a strong understanding of this topic."
-    if percentage >= 60:
-        return "Good work. Revise a few points and you will do even better."
-    if percentage >= 40:
-        return "Fair attempt. Spend more time revising this category."
-    return "Needs improvement. Please revise the basics and try again."
+    if percentage >= 90:
+        return "Excellent! You are exam ready for this module."
+    if percentage >= 75:
+        return "Very good. Revise the few questions you missed."
+    if percentage >= 50:
+        return "Good effort. Read the explanations and try again."
+    return "Needs work. Study the module and retake this test."
 
 
-def validate_student_name(name):
-    """Return (clean_name, error_message). error_message is None when valid."""
-    clean_name = (name or "").strip()
-    if not clean_name:
-        return None, "Please enter your name."
-    if len(clean_name) > 40:
-        return None, "Please enter a name with 40 characters or fewer."
-    return clean_name, None
+class QuizSession:
+    """One student taking one test: tracks the current question and answers."""
+
+    def __init__(self, questions):
+        if not questions:
+            raise QuizError("A quiz needs at least one question.")
+        self.questions = list(questions)
+        self.index = 0
+        self.answers = {}          # question_id -> selected letter
+
+    # ----- progress -----
+    @property
+    def total(self):
+        return len(self.questions)
+
+    @property
+    def current_question(self):
+        return self.questions[self.index]
+
+    @property
+    def is_last(self):
+        return self.index == self.total - 1
+
+    @property
+    def is_finished(self):
+        return len(self.answers) == self.total
+
+    # ----- actions -----
+    def answer_current(self, letter):
+        if letter not in LETTERS:
+            raise QuizError("Choose one of A, B, C or D.")
+        self.answers[self.current_question["question_id"]] = letter
+
+    def has_answered_current(self):
+        return self.current_question["question_id"] in self.answers
+
+    def next_question(self):
+        if not self.has_answered_current():
+            raise QuizError("Select an option before continuing.")
+        if self.is_last:
+            raise QuizError("This is the last question.")
+        self.index += 1
+
+    # ----- results -----
+    @property
+    def score(self):
+        return sum(1 for q in self.questions
+                   if self.answers.get(q["question_id"]) == q["correct_answer"])
+
+    @property
+    def percentage(self):
+        return round(self.score * 100 / self.total, 1)
+
+    def review_items(self):
+        """Everything the result screen needs: your answer, right answer, reason."""
+        items = []
+        for number, q in enumerate(self.questions, start=1):
+            selected = self.answers.get(q["question_id"])
+            items.append({
+                "number": number,
+                "question": q["question"],
+                "options": {"A": q["option_a"], "B": q["option_b"],
+                            "C": q["option_c"], "D": q["option_d"]},
+                "selected": selected,
+                "correct": q["correct_answer"],
+                "is_correct": selected == q["correct_answer"],
+                "explanation": q["explanation"],
+            })
+        return items
