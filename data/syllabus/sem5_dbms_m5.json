@@ -1,0 +1,567 @@
+{
+  "semester": 5,
+  "subjects": [
+    {
+      "code": "BTCS501-18",
+      "name": "Database Management Systems",
+      "modules": [
+        {
+          "number": 5,
+          "title": "Database Security",
+          "questions": [
+            {
+              "q": "What is the main goal of database security?",
+              "options": [
+                "To protect data against unauthorized access, disclosure, alteration and destruction",
+                "To make every query run in constant time",
+                "To remove all database constraints",
+                "To avoid creating backups"
+              ],
+              "answer": "A",
+              "explanation": "Database security protects confidentiality, integrity and availability of stored information."
+            },
+            {
+              "q": "What is authentication?",
+              "options": [
+                "Deciding which tables a user may update",
+                "Verifying the identity of a user or system",
+                "Encrypting every database row",
+                "Creating a database index"
+              ],
+              "answer": "B",
+              "explanation": "Authentication checks that a user is who they claim to be, commonly using credentials or other factors."
+            },
+            {
+              "q": "What is authorization?",
+              "options": [
+                "Verifying a user's identity",
+                "Creating a new database",
+                "Determining which actions an authenticated user is permitted to perform",
+                "Backing up transaction logs"
+              ],
+              "answer": "C",
+              "explanation": "Authorization grants or denies access to resources and operations after identity has been established."
+            },
+            {
+              "q": "Which is an example of a knowledge-based authentication factor?",
+              "options": [
+                "A fingerprint",
+                "A security token",
+                "A registered phone",
+                "A password"
+              ],
+              "answer": "D",
+              "explanation": "A password is something the user knows, unlike a biometric or possession-based factor."
+            },
+            {
+              "q": "What does multi-factor authentication require?",
+              "options": [
+                "Two or more different categories of authentication factors",
+                "Two passwords from the same category only",
+                "A username without a password",
+                "A database backup and a log file"
+              ],
+              "answer": "A",
+              "explanation": "MFA combines distinct factor categories, such as knowledge, possession and inherence."
+            },
+            {
+              "q": "What is the principle of least privilege?",
+              "options": [
+                "Give every user administrator access",
+                "Grant users only the permissions needed for their tasks",
+                "Share one account among all users",
+                "Disable audit logging"
+              ],
+              "answer": "B",
+              "explanation": "Least privilege reduces risk by limiting each account's access to the minimum necessary."
+            },
+            {
+              "q": "What is access control?",
+              "options": [
+                "A method for compressing database files",
+                "A method for ordering transactions",
+                "A mechanism that determines who can access which resources and perform which operations",
+                "A method for balancing a B-tree"
+              ],
+              "answer": "C",
+              "explanation": "Access control enforces policies governing subjects, objects and permitted actions."
+            },
+            {
+              "q": "In access control terminology, what is a subject?",
+              "options": [
+                "A database column",
+                "A storage block",
+                "A SQL keyword",
+                "An entity such as a user or process requesting access"
+              ],
+              "answer": "D",
+              "explanation": "A subject is an active entity that requests an operation on a protected object."
+            },
+            {
+              "q": "In access control terminology, what is an object?",
+              "options": [
+                "A protected resource such as a table, view or database file",
+                "Only a database administrator",
+                "A transaction timestamp",
+                "A password policy"
+              ],
+              "answer": "A",
+              "explanation": "An object is the resource to which access is being controlled."
+            },
+            {
+              "q": "What does DAC stand for?",
+              "options": [
+                "Data Authentication Control",
+                "Discretionary Access Control",
+                "Distributed Authorization Code",
+                "Database Audit Constraint"
+              ],
+              "answer": "B",
+              "explanation": "DAC is Discretionary Access Control, where permissions can commonly be granted by an object's owner."
+            },
+            {
+              "q": "What is a characteristic of DAC?",
+              "options": [
+                "Permissions are based only on security labels",
+                "Permissions can never be transferred",
+                "The owner of an object can grant or revoke permissions to other users",
+                "Every user has identical access"
+              ],
+              "answer": "C",
+              "explanation": "In DAC, the resource owner or an authorized user can decide how to share access, subject to policy."
+            },
+            {
+              "q": "What does MAC stand for in database security?",
+              "options": [
+                "Multiple Account Control",
+                "Managed Authentication Code",
+                "Mandatory Audit Check",
+                "Mandatory Access Control"
+              ],
+              "answer": "D",
+              "explanation": "MAC is Mandatory Access Control, where a central policy enforces access using security classifications and clearances."
+            },
+            {
+              "q": "In a typical MAC model, access decisions are based on:",
+              "options": [
+                "Security labels and user clearances",
+                "The order of SQL statements",
+                "The number of rows in a table",
+                "The user's preferred screen color"
+              ],
+              "answer": "A",
+              "explanation": "MAC compares the classification of an object with the clearance of a subject and applies mandatory policy rules."
+            },
+            {
+              "q": "What does RBAC stand for?",
+              "options": [
+                "Rule-Based Authentication Check",
+                "Role-Based Access Control",
+                "Record Backup and Copy",
+                "Remote Database Access Channel"
+              ],
+              "answer": "B",
+              "explanation": "RBAC assigns permissions to roles and then assigns users to those roles."
+            },
+            {
+              "q": "In RBAC, what is a role?",
+              "options": [
+                "A physical database page",
+                "A password hash",
+                "A job function or responsibility associated with a set of permissions",
+                "A transaction log entry"
+              ],
+              "answer": "C",
+              "explanation": "Roles represent organizational functions, such as clerk, analyst or administrator."
+            },
+            {
+              "q": "Which model is most directly associated with granting permissions to job roles?",
+              "options": [
+                "DAC",
+                "MAC",
+                "File-level encryption",
+                "RBAC"
+              ],
+              "answer": "D",
+              "explanation": "RBAC simplifies administration by associating permissions with roles rather than assigning each permission separately to every user."
+            },
+            {
+              "q": "What is the purpose of the SQL GRANT statement?",
+              "options": [
+                "To give specified privileges to a user or role",
+                "To remove a database table",
+                "To undo a transaction",
+                "To create an index"
+              ],
+              "answer": "A",
+              "explanation": "GRANT assigns privileges such as SELECT, INSERT or UPDATE on database objects."
+            },
+            {
+              "q": "What is the purpose of the SQL REVOKE statement?",
+              "options": [
+                "To create a new user",
+                "To withdraw previously granted privileges",
+                "To add a column",
+                "To commit a transaction"
+              ],
+              "answer": "B",
+              "explanation": "REVOKE removes specified privileges from a user or role."
+            },
+            {
+              "q": "Which privilege allows a user to retrieve rows from a table?",
+              "options": [
+                "DELETE",
+                "UPDATE",
+                "SELECT",
+                "ALTER"
+              ],
+              "answer": "C",
+              "explanation": "SELECT permission allows reading data through queries on the permitted object."
+            },
+            {
+              "q": "Which privilege is required to add new rows to a table?",
+              "options": [
+                "SELECT",
+                "REFERENCES",
+                "INDEX",
+                "INSERT"
+              ],
+              "answer": "D",
+              "explanation": "INSERT permission authorizes a user to add rows to a table."
+            },
+            {
+              "q": "What is the purpose of the WITH GRANT OPTION clause in SQL?",
+              "options": [
+                "It allows the grantee to pass the granted privilege to other users",
+                "It encrypts the granted table",
+                "It makes a transaction serializable",
+                "It automatically creates a backup"
+              ],
+              "answer": "A",
+              "explanation": "WITH GRANT OPTION permits the recipient to grant the specified privilege onward, subject to DBMS rules."
+            },
+            {
+              "q": "What is database auditing?",
+              "options": [
+                "Deleting old user accounts",
+                "Recording and reviewing database activities to support accountability and detection",
+                "Rebuilding all indexes",
+                "Converting tables to XML"
+              ],
+              "answer": "B",
+              "explanation": "Audit records can show who accessed or changed data and when those actions occurred."
+            },
+            {
+              "q": "Which information is useful in an audit log?",
+              "options": [
+                "Only the database logo",
+                "Only the server's screen resolution",
+                "User identity, action, object and time",
+                "Only the number of indexes"
+              ],
+              "answer": "C",
+              "explanation": "Audit events commonly record the actor, operation, affected object and timestamp."
+            },
+            {
+              "q": "What is intrusion detection in a database environment?",
+              "options": [
+                "A method of compressing tables",
+                "A process for generating candidate keys",
+                "A method for choosing join order",
+                "Monitoring activity to identify suspicious or unauthorized behavior"
+              ],
+              "answer": "D",
+              "explanation": "Intrusion detection analyzes activity and alerts on patterns that may indicate an attack or policy violation."
+            },
+            {
+              "q": "What is signature-based intrusion detection?",
+              "options": [
+                "Detecting activity by matching known attack patterns or signatures",
+                "Detecting every possible unknown attack with certainty",
+                "Granting access according to roles",
+                "Encrypting data at rest"
+              ],
+              "answer": "A",
+              "explanation": "Signature-based systems compare observed events with known patterns of malicious activity."
+            },
+            {
+              "q": "What is anomaly-based intrusion detection?",
+              "options": [
+                "Checking only whether a password is long",
+                "Identifying behavior that significantly deviates from an established normal pattern",
+                "Matching only known attack strings",
+                "Disabling all database connections"
+              ],
+              "answer": "B",
+              "explanation": "Anomaly detection looks for unusual behavior relative to a baseline, though unusual activity is not always malicious."
+            },
+            {
+              "q": "What is SQL injection?",
+              "options": [
+                "A method for balancing database indexes",
+                "A normal way to create a view",
+                "An attack in which untrusted input changes the intended structure or meaning of an SQL statement",
+                "A technique for compressing SQL logs"
+              ],
+              "answer": "C",
+              "explanation": "SQL injection occurs when input is improperly incorporated into SQL code and is interpreted as part of the command."
+            },
+            {
+              "q": "Which coding practice is a primary defense against SQL injection?",
+              "options": [
+                "Concatenating user input directly into SQL strings",
+                "Hiding error messages only",
+                "Giving the application administrator privileges",
+                "Using parameterized queries or prepared statements"
+              ],
+              "answer": "D",
+              "explanation": "Parameterized queries keep data values separate from SQL syntax, preventing input from becoming executable SQL code."
+            },
+            {
+              "q": "Why is input validation useful for database security?",
+              "options": [
+                "It checks that input conforms to expected type, length and format constraints",
+                "It replaces authentication completely",
+                "It makes SQL injection impossible in every circumstance",
+                "It grants users extra privileges"
+              ],
+              "answer": "A",
+              "explanation": "Validation rejects unexpected input and supports safe application behavior, but should complement parameterized queries."
+            },
+            {
+              "q": "Why should a database application avoid using an administrator account for routine queries?",
+              "options": [
+                "It makes indexes slower",
+                "A compromise would expose excessive privileges and increase potential damage",
+                "It prevents SQL from running",
+                "It disables transaction recovery"
+              ],
+              "answer": "B",
+              "explanation": "Routine application accounts should have only the permissions needed for their functions."
+            },
+            {
+              "q": "What is encryption at rest?",
+              "options": [
+                "Encrypting data while it travels over a network only",
+                "Hashing every SQL query",
+                "Protecting stored database files or storage media using encryption",
+                "Removing all access permissions"
+              ],
+              "answer": "C",
+              "explanation": "Encryption at rest protects stored data if the underlying storage is accessed without authorization."
+            },
+            {
+              "q": "What is encryption in transit?",
+              "options": [
+                "Encrypting data only after it is backed up",
+                "Encrypting the database schema names",
+                "Encrypting data only inside a B-tree",
+                "Protecting data while it moves between systems over a network"
+              ],
+              "answer": "D",
+              "explanation": "Transport encryption, commonly using TLS, protects network communications from eavesdropping and tampering."
+            },
+            {
+              "q": "What is password hashing used for?",
+              "options": [
+                "Storing a one-way derived representation of a password rather than the plaintext password",
+                "Recovering the original password for display",
+                "Granting SELECT permission",
+                "Creating a database index"
+              ],
+              "answer": "A",
+              "explanation": "A password verifier stores a salted, slow hash so the original password is not stored directly."
+            },
+            {
+              "q": "Why should a unique salt be used with password hashing?",
+              "options": [
+                "To make all users share the same password hash",
+                "To make precomputed attacks such as rainbow tables less effective",
+                "To allow passwords to be decrypted",
+                "To remove the need for a strong hash function"
+              ],
+              "answer": "B",
+              "explanation": "A unique random salt makes identical passwords produce different stored hashes and frustrates precomputed lookup attacks."
+            },
+            {
+              "q": "What is a database view useful for in security?",
+              "options": [
+                "It always gives users access to every base table",
+                "It disables authentication",
+                "It can expose only selected rows or columns to a user",
+                "It automatically encrypts the database file"
+              ],
+              "answer": "C",
+              "explanation": "Views can provide a restricted representation of underlying data when privileges are configured appropriately."
+            },
+            {
+              "q": "What is row-level security?",
+              "options": [
+                "A rule that restricts which individual rows a user can see or modify",
+                "A rule that allows only one column per table",
+                "A method for sorting rows by size",
+                "A method for making a B-tree balanced"
+              ],
+              "answer": "A",
+              "explanation": "Row-level security applies access policies to individual records based on the user or context."
+            },
+            {
+              "q": "What is the purpose of a database firewall?",
+              "options": [
+                "To create candidate keys",
+                "To replace all database backups",
+                "To run SQL queries faster",
+                "To monitor and control database network traffic or database requests according to policy"
+              ],
+              "answer": "D",
+              "explanation": "A database firewall can inspect and filter database traffic to help block suspicious or unauthorized requests."
+            },
+            {
+              "q": "What is data masking?",
+              "options": [
+                "Replacing sensitive values with altered or obscured values for certain uses",
+                "Deleting all database constraints",
+                "Granting every user full access",
+                "Turning a relational database into a graph"
+              ],
+              "answer": "A",
+              "explanation": "Masking reduces exposure of sensitive information in test, development or limited-access environments."
+            },
+            {
+              "q": "Which is an example of a sensitive database field?",
+              "options": [
+                "A public product category",
+                "A customer's government identification number",
+                "A public table name",
+                "A non-sensitive status label"
+              ],
+              "answer": "B",
+              "explanation": "Government identification numbers can be used to identify individuals and require strong protection."
+            },
+            {
+              "q": "What does separation of duties mean?",
+              "options": [
+                "One user controls every security function",
+                "All users share one account",
+                "Critical tasks are divided among different people or roles",
+                "Audit logs are disabled"
+              ],
+              "answer": "C",
+              "explanation": "Separation of duties reduces the risk of fraud or error by preventing one person from controlling an entire critical process."
+            },
+            {
+              "q": "What is a brute-force password attack?",
+              "options": [
+                "A method for splitting B-tree nodes",
+                "A method for recovering deleted rows",
+                "A type of SQL join",
+                "Repeatedly trying many possible passwords until one succeeds"
+              ],
+              "answer": "D",
+              "explanation": "Brute-force attacks systematically test password guesses and can be mitigated by rate limits and strong authentication."
+            },
+            {
+              "q": "What is account lockout or throttling intended to reduce?",
+              "options": [
+                "Repeated automated login guessing",
+                "Database normalization",
+                "Index fragmentation",
+                "Transaction logging"
+              ],
+              "answer": "A",
+              "explanation": "Rate limiting or temporary lockout slows repeated authentication attempts and helps mitigate password guessing."
+            },
+            {
+              "q": "What is the purpose of patching a DBMS?",
+              "options": [
+                "To remove all user accounts",
+                "To fix known vulnerabilities and software defects",
+                "To replace relational algebra",
+                "To make every query use a full scan"
+              ],
+              "answer": "B",
+              "explanation": "Security patches address known weaknesses that attackers may otherwise exploit."
+            },
+            {
+              "q": "Why are backups important to database security?",
+              "options": [
+                "They prevent every unauthorized login",
+                "They replace access control",
+                "They support restoration after data loss, corruption or destructive attacks",
+                "They make passwords unnecessary"
+              ],
+              "answer": "C",
+              "explanation": "Protected, tested backups support availability and recovery after incidents such as ransomware or accidental deletion."
+            },
+            {
+              "q": "What is the main risk of excessive database privileges?",
+              "options": [
+                "Queries always become slower",
+                "Tables cannot be indexed",
+                "Transactions become read-only",
+                "A compromised or misused account can perform actions beyond its legitimate needs"
+              ],
+              "answer": "D",
+              "explanation": "Excessive privileges increase the potential impact of account compromise or misuse."
+            },
+            {
+              "q": "What is a security policy?",
+              "options": [
+                "A documented set of rules defining how information and systems must be protected",
+                "A list of SQL arithmetic operators",
+                "A B-tree insertion algorithm",
+                "A transaction schedule"
+              ],
+              "answer": "A",
+              "explanation": "A security policy states requirements for access, handling, monitoring and protection of information assets."
+            },
+            {
+              "q": "Which practice helps protect database credentials?",
+              "options": [
+                "Embedding plaintext passwords in public source code",
+                "Keeping secrets in a protected configuration or secret manager and limiting access",
+                "Sharing one password among all developers",
+                "Writing passwords into audit logs"
+              ],
+              "answer": "B",
+              "explanation": "Credentials should be stored securely, excluded from public code and exposed only to authorized components."
+            },
+            {
+              "q": "What is the purpose of periodic privilege review?",
+              "options": [
+                "To increase every user's permissions",
+                "To remove all audit history",
+                "To confirm that granted access is still necessary and appropriate",
+                "To disable database authentication"
+              ],
+              "answer": "C",
+              "explanation": "Regular reviews help identify stale accounts and permissions that are no longer required."
+            },
+            {
+              "q": "What is a common consequence of a successful SQL injection attack?",
+              "options": [
+                "Only a change in screen color",
+                "Automatic B-tree balancing",
+                "Guaranteed database performance improvement",
+                "Unauthorized reading or modification of database information"
+              ],
+              "answer": "D",
+              "explanation": "Depending on privileges and query context, injection can expose, alter or delete data."
+            },
+            {
+              "q": "What is a security vulnerability?",
+              "options": [
+                "A feature that guarantees data consistency",
+                "A type of database index",
+                "A weakness that could be exploited to violate security",
+                "A normal transaction commit"
+              ],
+              "answer": "C",
+              "explanation": "A vulnerability is a weakness in software, configuration or process that may be exploited by a threat."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

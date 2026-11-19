@@ -1,0 +1,567 @@
+{
+  "semester": 5,
+  "subjects": [
+    {
+      "code": "BTCS501-18",
+      "name": "Database Management Systems",
+      "modules": [
+        {
+          "number": 4,
+          "title": "Transaction Processing",
+          "questions": [
+            {
+              "q": "What is a database transaction?",
+              "options": [
+                "A logical unit of work consisting of one or more database operations",
+                "A physical disk sector",
+                "A database username",
+                "A type of index"
+              ],
+              "answer": "A",
+              "explanation": "A transaction groups operations into a logical unit that should satisfy database correctness properties."
+            },
+            {
+              "q": "Which ACID property means a transaction is all-or-nothing?",
+              "options": [
+                "Consistency",
+                "Isolation",
+                "Atomicity",
+                "Durability"
+              ],
+              "answer": "C",
+              "explanation": "Atomicity ensures that either all operations of a transaction take effect or none do."
+            },
+            {
+              "q": "Which ACID property ensures that a committed transaction survives a system crash?",
+              "options": [
+                "Isolation",
+                "Durability",
+                "Atomicity",
+                "Consistency"
+              ],
+              "answer": "B",
+              "explanation": "Durability requires committed changes to persist despite failures, typically using logging and stable storage."
+            },
+            {
+              "q": "Which ACID property ensures that a transaction takes the database from one valid state to another?",
+              "options": [
+                "Isolation",
+                "Durability",
+                "Atomicity",
+                "Consistency"
+              ],
+              "answer": "D",
+              "explanation": "Consistency means integrity constraints remain satisfied when a transaction commits."
+            },
+            {
+              "q": "Which ACID property controls the visibility of concurrent transaction operations?",
+              "options": [
+                "Isolation",
+                "Durability",
+                "Consistency",
+                "Atomicity"
+              ],
+              "answer": "A",
+              "explanation": "Isolation prevents concurrent execution from producing effects that violate the chosen isolation guarantees."
+            },
+            {
+              "q": "What is a schedule in transaction processing?",
+              "options": [
+                "A list of database users",
+                "An ordering of operations from one or more transactions",
+                "A backup calendar only",
+                "A list of index pages"
+              ],
+              "answer": "B",
+              "explanation": "A schedule specifies the order in which transaction read, write, commit and abort operations execute."
+            },
+            {
+              "q": "When is a schedule serial?",
+              "options": [
+                "When every operation is a write",
+                "When transactions execute in alternating steps",
+                "When each transaction completes before the next one begins",
+                "When all transactions abort"
+              ],
+              "answer": "C",
+              "explanation": "A serial schedule runs transactions one after another without interleaving their operations."
+            },
+            {
+              "q": "What is a non-serial schedule?",
+              "options": [
+                "A schedule with no transactions",
+                "A schedule containing only commits",
+                "A schedule with one operation",
+                "A schedule in which operations of different transactions are interleaved"
+              ],
+              "answer": "D",
+              "explanation": "A non-serial schedule interleaves operations from multiple transactions."
+            },
+            {
+              "q": "What does conflict serializability test?",
+              "options": [
+                "Whether a schedule can be transformed into a serial schedule by swapping non-conflicting operations",
+                "Whether every transaction uses a primary key",
+                "Whether all transactions read the same row",
+                "Whether the database has an index"
+              ],
+              "answer": "A",
+              "explanation": "Conflict equivalence is based on preserving the order of conflicting operations."
+            },
+            {
+              "q": "When do two operations conflict?",
+              "options": [
+                "They belong to the same transaction",
+                "They access different data items",
+                "They access the same item, belong to different transactions, and at least one is a write",
+                "They are both commit operations"
+              ],
+              "answer": "C",
+              "explanation": "Conflicts arise for read-write, write-read and write-write pairs on the same data item across transactions."
+            },
+            {
+              "q": "Which pair of operations does not conflict?",
+              "options": [
+                "Read(X) and Write(X)",
+                "Read(X) and Read(X)",
+                "Write(X) and Read(X)",
+                "Write(X) and Write(X)"
+              ],
+              "answer": "B",
+              "explanation": "Two reads of the same item do not change the value or impose an ordering requirement."
+            },
+            {
+              "q": "What does a precedence graph represent?",
+              "options": [
+                "Database storage locations",
+                "User roles and permissions",
+                "B-tree parent-child links",
+                "Transactions as vertices and conflict ordering as directed edges"
+              ],
+              "answer": "D",
+              "explanation": "An edge Ti to Tj indicates a conflicting operation of Ti occurs before one of Tj."
+            },
+            {
+              "q": "What indicates that a schedule is conflict-serializable?",
+              "options": [
+                "Its precedence graph is acyclic",
+                "Its precedence graph has a self-loop",
+                "Every transaction writes one item",
+                "It contains no read operations"
+              ],
+              "answer": "A",
+              "explanation": "A schedule is conflict-serializable exactly when its precedence graph has no directed cycle."
+            },
+            {
+              "q": "If a precedence graph contains a directed cycle, what can be concluded?",
+              "options": [
+                "The schedule is serial",
+                "The schedule is conflict-serializable",
+                "The schedule is not conflict-serializable",
+                "All transactions are read-only"
+              ],
+              "answer": "C",
+              "explanation": "A directed cycle prevents a topological ordering of transactions and therefore rules out conflict serializability."
+            },
+            {
+              "q": "What is view serializability?",
+              "options": [
+                "A condition based only on transaction names",
+                "A weaker serializability notion based on read-from relationships and final writes",
+                "A rule requiring all reads before writes",
+                "A method for sorting index entries"
+              ],
+              "answer": "B",
+              "explanation": "View equivalence preserves initial reads, reads-from relationships and the transaction responsible for the final write."
+            },
+            {
+              "q": "Which statement about conflict and view serializability is correct?",
+              "options": [
+                "Every view-serializable schedule is conflict-serializable",
+                "The two concepts are identical",
+                "No serial schedule is view-serializable",
+                "Every conflict-serializable schedule is view-serializable"
+              ],
+              "answer": "D",
+              "explanation": "Conflict serializability is stricter; every conflict-serializable schedule is view-serializable, but not vice versa."
+            },
+            {
+              "q": "What is a recoverable schedule?",
+              "options": [
+                "A schedule in which a transaction commits only after the transactions whose values it has read have committed",
+                "A schedule with no read operations",
+                "A schedule in which all transactions commit simultaneously",
+                "A schedule that never writes data"
+              ],
+              "answer": "A",
+              "explanation": "Recoverability prevents a transaction from committing based on data written by an uncommitted transaction."
+            },
+            {
+              "q": "What is a cascading rollback?",
+              "options": [
+                "A transaction is committed twice",
+                "A database index is rebuilt",
+                "Aborting one transaction forces other dependent transactions to roll back",
+                "A transaction reads only committed data"
+              ],
+              "answer": "C",
+              "explanation": "If a transaction reads uncommitted data from another transaction, the first transaction's abort may require dependent rollbacks."
+            },
+            {
+              "q": "What is a cascadeless schedule?",
+              "options": [
+                "A schedule where all transactions use timestamps",
+                "A schedule in which transactions read only values written by committed transactions",
+                "A schedule with no writes",
+                "A schedule that contains a cycle"
+              ],
+              "answer": "B",
+              "explanation": "Cascadeless schedules prevent reads of uncommitted writes and therefore avoid cascading aborts."
+            },
+            {
+              "q": "What is a strict schedule?",
+              "options": [
+                "A schedule that permits dirty reads",
+                "A schedule where reads always occur before writes",
+                "A schedule with no commits",
+                "A schedule that prevents other transactions from reading or writing an item written by an uncommitted transaction"
+              ],
+              "answer": "D",
+              "explanation": "Strictness delays both reads and writes of an item until the transaction holding its write has committed or aborted."
+            },
+            {
+              "q": "What is the basic idea of two-phase locking (2PL)?",
+              "options": [
+                "A transaction has a growing phase for acquiring locks and a shrinking phase for releasing them",
+                "A transaction must use exactly two tables",
+                "Every transaction commits twice",
+                "Locks are acquired only after commit"
+              ],
+              "answer": "A",
+              "explanation": "In 2PL, locks are acquired during the growing phase and released during the shrinking phase."
+            },
+            {
+              "q": "What is the growing phase of 2PL?",
+              "options": [
+                "The phase in which all locks are released",
+                "The phase in which a transaction may acquire locks but may not release any",
+                "The phase after a transaction commits",
+                "The phase in which only shared locks are allowed"
+              ],
+              "answer": "B",
+              "explanation": "During the growing phase, a transaction may obtain locks but cannot release locks."
+            },
+            {
+              "q": "What is the shrinking phase of 2PL?",
+              "options": [
+                "The phase in which a transaction acquires new locks",
+                "The phase in which the database is backed up",
+                "The phase in which a transaction releases locks and cannot acquire new ones",
+                "The phase in which SQL is parsed"
+              ],
+              "answer": "C",
+              "explanation": "Once a transaction releases its first lock, it enters the shrinking phase and cannot obtain additional locks."
+            },
+            {
+              "q": "What is strict 2PL?",
+              "options": [
+                "A protocol that releases all locks before the first write",
+                "A protocol that uses no exclusive locks",
+                "A protocol that prevents all concurrent reads",
+                "A protocol that holds exclusive locks until commit or abort"
+              ],
+              "answer": "D",
+              "explanation": "Strict 2PL retains exclusive locks until transaction completion, simplifying recovery and preventing cascading rollback."
+            },
+            {
+              "q": "What does a shared lock permit?",
+              "options": [
+                "Reading an item while allowing other compatible shared locks",
+                "Writing an item while excluding every other lock",
+                "Deleting the database",
+                "Changing the transaction timestamp"
+              ],
+              "answer": "A",
+              "explanation": "Multiple transactions can hold compatible shared locks on the same item to read it."
+            },
+            {
+              "q": "What does an exclusive lock permit?",
+              "options": [
+                "Only other shared locks",
+                "Reading and writing while excluding incompatible locks",
+                "Only index scans",
+                "Only commit operations"
+              ],
+              "answer": "B",
+              "explanation": "An exclusive lock gives a transaction write access and prevents conflicting access by other transactions."
+            },
+            {
+              "q": "What is a lock upgrade?",
+              "options": [
+                "Changing an exclusive lock to no lock",
+                "Changing a timestamp into a lock",
+                "Changing a shared lock to an exclusive lock",
+                "Releasing every lock at commit"
+              ],
+              "answer": "C",
+              "explanation": "A transaction may request an upgrade from shared to exclusive when it needs to modify an item."
+            },
+            {
+              "q": "What is deadlock?",
+              "options": [
+                "A transaction finishes before it starts",
+                "A database contains duplicate keys",
+                "A buffer page is clean",
+                "Two or more transactions wait indefinitely for resources held by one another"
+              ],
+              "answer": "D",
+              "explanation": "Deadlock occurs when transactions form a circular wait and none can proceed."
+            },
+            {
+              "q": "Which graph is commonly used for deadlock detection?",
+              "options": [
+                "Wait-for graph",
+                "B-tree graph",
+                "Entity-relationship diagram",
+                "Query parse tree"
+              ],
+              "answer": "A",
+              "explanation": "A wait-for graph has transactions as nodes and edges showing which transaction is waiting for another."
+            },
+            {
+              "q": "What does a cycle in a wait-for graph indicate?",
+              "options": [
+                "The database is fully backed up",
+                "A possible deadlock among transactions",
+                "All locks are compatible",
+                "The schedule is serial"
+              ],
+              "answer": "B",
+              "explanation": "A cycle in the wait-for graph indicates circular waiting and hence deadlock."
+            },
+            {
+              "q": "What is a timestamp-ordering protocol?",
+              "options": [
+                "A protocol that sorts table names alphabetically",
+                "A protocol that uses only shared locks",
+                "A protocol that orders conflicting operations according to transaction timestamps",
+                "A protocol that prevents transactions from reading"
+              ],
+              "answer": "C",
+              "explanation": "Timestamp ordering assigns each transaction a timestamp and enforces a consistent order on conflicting operations."
+            },
+            {
+              "q": "In timestamp ordering, what does TS(T) represent?",
+              "options": [
+                "The number of tables accessed by T",
+                "The number of locks held by T",
+                "The disk address of T",
+                "The timestamp assigned to transaction T"
+              ],
+              "answer": "D",
+              "explanation": "TS(T) is the transaction's timestamp, usually assigned when it begins."
+            },
+            {
+              "q": "What does read_TS(X) record?",
+              "options": [
+                "The largest timestamp of any transaction that successfully read X",
+                "The smallest value stored in X",
+                "The number of reads of X",
+                "The timestamp of the database backup"
+              ],
+              "answer": "A",
+              "explanation": "read_TS(X) tracks the most recent timestamp among successful reads of data item X."
+            },
+            {
+              "q": "What does write_TS(X) record?",
+              "options": [
+                "The number of writes to X",
+                "The largest timestamp of any transaction that successfully wrote X",
+                "The first value ever stored in X",
+                "The lock owner of X"
+              ],
+              "answer": "B",
+              "explanation": "write_TS(X) records the timestamp of the most recent successful write on X."
+            },
+            {
+              "q": "What is multiversion concurrency control (MVCC)?",
+              "options": [
+                "A method that stores only one version of every row",
+                "A method that disables concurrent transactions",
+                "A method that maintains multiple versions of data to support concurrent access",
+                "A method that replaces SQL with file operations"
+              ],
+              "answer": "C",
+              "explanation": "MVCC keeps versions so readers can access a consistent snapshot while writers create newer versions."
+            },
+            {
+              "q": "What is a common benefit of MVCC?",
+              "options": [
+                "It eliminates the need for storage",
+                "It prevents every possible application error",
+                "It guarantees that no transaction can abort",
+                "Readers can often proceed without blocking writers"
+              ],
+              "answer": "D",
+              "explanation": "Readers can use an appropriate committed version while writers update a newer version."
+            },
+            {
+              "q": "What is optimistic concurrency control based on?",
+              "options": [
+                "Assuming conflicts are uncommon and checking for conflicts before commit",
+                "Locking every row permanently",
+                "Using only hash indexes",
+                "Preventing all read operations"
+              ],
+              "answer": "A",
+              "explanation": "Optimistic control allows work to proceed and validates whether the transaction can safely commit."
+            },
+            {
+              "q": "Which phases are commonly associated with optimistic concurrency control?",
+              "options": [
+                "Parse, compile, execute",
+                "Read, validation, write",
+                "Lock, unlock, delete",
+                "Backup, restore, checkpoint"
+              ],
+              "answer": "B",
+              "explanation": "A typical optimistic protocol has a read phase, a validation phase and a write phase."
+            },
+            {
+              "q": "What is the purpose of a transaction log?",
+              "options": [
+                "To store only query results",
+                "To list database users",
+                "To record changes and transaction events needed for recovery",
+                "To replace the data files"
+              ],
+              "answer": "C",
+              "explanation": "The log provides information required to redo or undo operations after failures."
+            },
+            {
+              "q": "What is write-ahead logging (WAL)?",
+              "options": [
+                "Data pages must be written before any log record",
+                "The log is discarded after every query",
+                "Only read operations are logged",
+                "The relevant log record must reach stable storage before the changed data page is written"
+              ],
+              "answer": "D",
+              "explanation": "WAL ensures recovery information is durable before a modified data page is allowed to reach disk."
+            },
+            {
+              "q": "What is a checkpoint in database recovery?",
+              "options": [
+                "A recovery marker that helps limit how much of the log must be processed after a failure",
+                "A command that deletes all old rows",
+                "A lock used only for reading",
+                "A method for creating a candidate key"
+              ],
+              "answer": "A",
+              "explanation": "A checkpoint records a recovery position and can reduce restart work."
+            },
+            {
+              "q": "What is the purpose of the REDO operation during recovery?",
+              "options": [
+                "To reverse an uncommitted transaction",
+                "To reapply logged updates that should be present after recovery",
+                "To remove all indexes",
+                "To discard committed transactions"
+              ],
+              "answer": "B",
+              "explanation": "REDO reapplies updates so committed changes are reflected in the recovered database."
+            },
+            {
+              "q": "What is the purpose of UNDO during recovery?",
+              "options": [
+                "To repeat every committed operation",
+                "To create a new transaction timestamp",
+                "To reverse effects of transactions that did not commit",
+                "To sort the transaction log"
+              ],
+              "answer": "C",
+              "explanation": "UNDO removes effects of incomplete transactions so the database returns to a consistent state."
+            },
+            {
+              "q": "What is a deferred database modification scheme?",
+              "options": [
+                "Updates are written to the database before they are logged",
+                "Every update is immediately visible to all transactions",
+                "The log is never used",
+                "Database updates are postponed until the transaction commits"
+              ],
+              "answer": "D",
+              "explanation": "Deferred modification records changes in the log and applies them to the database after commit, often requiring REDO but not UNDO."
+            },
+            {
+              "q": "What is an immediate database modification scheme?",
+              "options": [
+                "Database pages may be updated before commit, so recovery may need both UNDO and REDO",
+                "Updates are applied only after a full backup",
+                "No log records are written",
+                "Only read-only transactions are allowed"
+              ],
+              "answer": "A",
+              "explanation": "Immediate modification may write uncommitted changes to disk, so recovery must undo incomplete work and redo committed work."
+            },
+            {
+              "q": "What is a database shadow page or shadow copy approach intended to provide?",
+              "options": [
+                "A method for sorting a relation",
+                "A recovery approach that preserves an unchanged page mapping while updates are made to new pages",
+                "A protocol for granting user roles",
+                "A type of SQL injection"
+              ],
+              "answer": "B",
+              "explanation": "Shadow paging keeps an old consistent page table while modified pages are written separately, then switches the pointer at commit."
+            },
+            {
+              "q": "What is a phantom read?",
+              "options": [
+                "A transaction reads the same row twice and gets the same value",
+                "A transaction loses its database password",
+                "Repeating a predicate query returns a different set of rows because another transaction inserted or deleted matching rows",
+                "A transaction reads an index root"
+              ],
+              "answer": "C",
+              "explanation": "A phantom occurs when a repeated range or predicate query sees newly matching or missing rows due to concurrent changes."
+            },
+            {
+              "q": "What is the purpose of a serializable isolation level?",
+              "options": [
+                "To permit all dirty reads",
+                "To force every query to use a hash index",
+                "To disable transactions",
+                "To make concurrent execution equivalent to some serial execution"
+              ],
+              "answer": "D",
+              "explanation": "Serializable isolation aims to ensure the outcome is equivalent to a serial ordering of transactions."
+            },
+            {
+              "q": "What is a lost update problem?",
+              "options": [
+                "One transaction overwrites another transaction's update because of an unsafe interleaving",
+                "A transaction reads a committed value twice",
+                "A database restores a checkpoint",
+                "Two transactions use different tables"
+              ],
+              "answer": "A",
+              "explanation": "A lost update occurs when concurrent writes cause one transaction's change to be overwritten without being properly accounted for."
+            },
+            {
+              "q": "What is the purpose of a savepoint inside a transaction?",
+              "options": [
+                "To commit the entire database",
+                "To mark a point to which part of a transaction can be rolled back",
+                "To create a new database user",
+                "To rebuild a B+ tree"
+              ],
+              "answer": "B",
+              "explanation": "A savepoint lets an application roll back part of the current transaction without necessarily aborting all of it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

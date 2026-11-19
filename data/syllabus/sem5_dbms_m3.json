@@ -1,0 +1,567 @@
+{
+  "semester": 5,
+  "subjects": [
+    {
+      "code": "BTCS501-18",
+      "name": "Database Management Systems",
+      "modules": [
+        {
+          "number": 3,
+          "title": "Storage Strategies",
+          "questions": [
+            {
+              "q": "What is the main purpose of secondary storage in a DBMS?",
+              "options": [
+                "To permanently store large amounts of data",
+                "To execute SQL statements",
+                "To replace the query optimizer",
+                "To hold only CPU instructions"
+              ],
+              "answer": "A",
+              "explanation": "Secondary storage such as SSDs and hard disks provides non-volatile, long-term storage for database files."
+            },
+            {
+              "q": "Which storage device generally has no moving mechanical parts?",
+              "options": [
+                "Magnetic tape",
+                "Hard disk drive",
+                "Solid-state drive",
+                "Optical disc"
+              ],
+              "answer": "C",
+              "explanation": "An SSD stores data in flash memory and has no spinning platters or moving read/write head."
+            },
+            {
+              "q": "What is a database block (page)?",
+              "options": [
+                "A SQL command",
+                "A fixed-size unit of data transferred between storage and memory",
+                "A database user account",
+                "A type of index key"
+              ],
+              "answer": "B",
+              "explanation": "A DBMS commonly transfers data between disk and main memory in page-sized units."
+            },
+            {
+              "q": "Why does a DBMS use a buffer manager?",
+              "options": [
+                "To translate SQL into relational algebra",
+                "To create user passwords",
+                "To compress every query",
+                "To manage database pages cached in main memory"
+              ],
+              "answer": "D",
+              "explanation": "The buffer manager controls which disk pages are kept in memory and handles page reads and writes."
+            },
+            {
+              "q": "What is a buffer hit?",
+              "options": [
+                "The requested page is already present in the buffer pool",
+                "The requested page is corrupted",
+                "A transaction has been aborted",
+                "An index has no root node"
+              ],
+              "answer": "A",
+              "explanation": "A buffer hit occurs when the required page is found in memory, avoiding a disk read."
+            },
+            {
+              "q": "What is the purpose of a dirty page flag?",
+              "options": [
+                "It marks a page as encrypted",
+                "It indicates that the page has been modified in memory and must eventually be written",
+                "It identifies an empty table",
+                "It marks a transaction as read-only"
+              ],
+              "answer": "B",
+              "explanation": "A dirty page contains changes not yet written to the persistent database file."
+            },
+            {
+              "q": "Which replacement policy removes the page that has not been used for the longest time?",
+              "options": [
+                "FIFO",
+                "MRU",
+                "LRU",
+                "Random"
+              ],
+              "answer": "C",
+              "explanation": "Least Recently Used (LRU) selects the page whose most recent access is farthest in the past."
+            },
+            {
+              "q": "In a database file, what is a record?",
+              "options": [
+                "A collection of related fields describing one row",
+                "A complete database server",
+                "A query execution plan",
+                "A storage device"
+              ],
+              "answer": "A",
+              "explanation": "A record stores the field values belonging to one tuple or row."
+            },
+            {
+              "q": "Which file organization stores records in no particular order based on a search key?",
+              "options": [
+                "Sequential sorted organization",
+                "Clustered organization",
+                "Hashed organization",
+                "Heap file organization"
+              ],
+              "answer": "D",
+              "explanation": "A heap file stores records without maintaining an order on a particular search attribute."
+            },
+            {
+              "q": "What is a major advantage of a sequential sorted file?",
+              "options": [
+                "It never requires disk space",
+                "It supports efficient sequential and range access on the ordering key",
+                "It prevents duplicate values automatically",
+                "It makes every update constant-time"
+              ],
+              "answer": "B",
+              "explanation": "Sorted records can be read in key order and ranges can be located efficiently."
+            },
+            {
+              "q": "What is an index in a DBMS?",
+              "options": [
+                "A copy of the entire application",
+                "A transaction log",
+                "An auxiliary structure that helps locate records",
+                "A constraint that forbids NULL"
+              ],
+              "answer": "C",
+              "explanation": "An index stores search-key values with references that help the DBMS find corresponding records."
+            },
+            {
+              "q": "What does a search key in an index represent?",
+              "options": [
+                "One or more attributes used to locate records",
+                "The password used by a database user",
+                "The physical size of a disk",
+                "The name of a database view"
+              ],
+              "answer": "A",
+              "explanation": "The search key is the attribute or attribute set on which the index is built."
+            },
+            {
+              "q": "A primary index is commonly built on which attribute?",
+              "options": [
+                "An attribute that is never queried",
+                "A non-key attribute with duplicates",
+                "A temporary variable",
+                "The ordering key of a file that is physically ordered on that key"
+              ],
+              "answer": "D",
+              "explanation": "A primary index is associated with a data file ordered on its primary ordering key."
+            },
+            {
+              "q": "What is a clustering index?",
+              "options": [
+                "An index on a random expression only",
+                "An index on an ordering non-key attribute whose values may repeat",
+                "An index that stores only NULL values",
+                "An index used only for passwords"
+              ],
+              "answer": "B",
+              "explanation": "A clustering index supports a file ordered by a non-key attribute, so several records may share a value."
+            },
+            {
+              "q": "What is a secondary index?",
+              "options": [
+                "An index that determines the physical ordering of the data file",
+                "A database backup",
+                "An additional index whose search order differs from the file's physical ordering",
+                "A transaction schedule"
+              ],
+              "answer": "C",
+              "explanation": "A secondary index provides another access path and does not define the file's physical order."
+            },
+            {
+              "q": "What is a dense index?",
+              "options": [
+                "An index with an entry for every search-key value or every record, depending on the index design",
+                "An index with no entries",
+                "An index containing only the first record",
+                "An index that stores SQL text"
+              ],
+              "answer": "A",
+              "explanation": "A dense index has an index entry for each search-key value or record, enabling direct lookup through the index."
+            },
+            {
+              "q": "What is a sparse index?",
+              "options": [
+                "An index containing every possible key",
+                "An index stored only in RAM",
+                "An index with no pointer fields",
+                "An index containing entries for only some search-key values, often one per data block"
+              ],
+              "answer": "D",
+              "explanation": "A sparse index uses fewer entries and generally relies on the data file being ordered."
+            },
+            {
+              "q": "Which condition usually allows a sparse index to work correctly?",
+              "options": [
+                "The file must be encrypted",
+                "The data file must be ordered on the index search key",
+                "Every row must have a NULL key",
+                "The table must contain one row"
+              ],
+              "answer": "B",
+              "explanation": "Ordering lets the DBMS find the relevant block from a smaller set of index entries."
+            },
+            {
+              "q": "What is a multilevel index?",
+              "options": [
+                "An index that supports multiple users only",
+                "An index containing several unrelated tables",
+                "An index built over another index to reduce search levels",
+                "A list of all SQL keywords"
+              ],
+              "answer": "C",
+              "explanation": "When an index is too large, another index level can be built over it to speed up searching."
+            },
+            {
+              "q": "What is the main purpose of a B-tree?",
+              "options": [
+                "To support balanced search, insertion and deletion",
+                "To store only text documents",
+                "To remove all duplicate rows",
+                "To replace transaction logging"
+              ],
+              "answer": "A",
+              "explanation": "A B-tree is a balanced search tree designed to support efficient dynamic indexing."
+            },
+            {
+              "q": "What does it mean for a B-tree to be height-balanced?",
+              "options": [
+                "Every node has exactly one key",
+                "All leaves are at the same depth",
+                "The root is always a leaf",
+                "Every internal node has two children"
+              ],
+              "answer": "B",
+              "explanation": "In a B-tree, all leaf nodes occur at the same level, keeping the tree balanced."
+            },
+            {
+              "q": "In a B-tree, where can search-key values be stored?",
+              "options": [
+                "Only in the root",
+                "Only in leaf nodes",
+                "Only outside the tree",
+                "In both internal and leaf nodes"
+              ],
+              "answer": "D",
+              "explanation": "A B-tree can store keys and record pointers in internal as well as leaf nodes."
+            },
+            {
+              "q": "What is a key difference between a B-tree and a B+ tree?",
+              "options": [
+                "B+ trees do not have a root",
+                "B-trees cannot be searched",
+                "B+ trees store data entries at leaves and use internal nodes mainly for navigation",
+                "B+ trees cannot contain duplicate search keys"
+              ],
+              "answer": "C",
+              "explanation": "In a B+ tree, data entries or record pointers are stored at leaf level; internal nodes guide searches."
+            },
+            {
+              "q": "Why are B+ tree leaf nodes often linked?",
+              "options": [
+                "To support efficient sequential and range scans",
+                "To encrypt the index",
+                "To prevent insertion",
+                "To store transaction passwords"
+              ],
+              "answer": "A",
+              "explanation": "Linked leaves let the DBMS move through adjacent key values without repeatedly returning to the root."
+            },
+            {
+              "q": "What happens when a B+ tree leaf node overflows during insertion?",
+              "options": [
+                "The whole database is deleted",
+                "The node is split and a separator key may be propagated upward",
+                "The root is always removed",
+                "All keys are converted to strings"
+              ],
+              "answer": "B",
+              "explanation": "A split creates space while preserving order and balance; a separator is inserted into the parent."
+            },
+            {
+              "q": "What is the root node's role in a tree index?",
+              "options": [
+                "It stores only deleted rows",
+                "It is always the final data page",
+                "It is the starting point for traversing the index",
+                "It contains the transaction log"
+              ],
+              "answer": "C",
+              "explanation": "A search begins at the root and follows child pointers toward the target key."
+            },
+            {
+              "q": "What is the order or fan-out of a tree index related to?",
+              "options": [
+                "The number of database users",
+                "The number of SQL statements in a file",
+                "The number of columns in every table",
+                "The maximum number of child pointers a node can contain"
+              ],
+              "answer": "D",
+              "explanation": "Fan-out describes how many child pointers an internal node can have and strongly affects tree height."
+            },
+            {
+              "q": "Why are B+ trees suitable for range queries?",
+              "options": [
+                "Their leaves are ordered and commonly linked",
+                "They store no keys",
+                "They require scanning every database table",
+                "They support equality searches only"
+              ],
+              "answer": "A",
+              "explanation": "Ordered linked leaves make it efficient to continue from the first matching key through the requested range."
+            },
+            {
+              "q": "What is hashing in database file organization?",
+              "options": [
+                "Sorting records alphabetically",
+                "Using a hash function to map a search key to a bucket",
+                "Encrypting each database page",
+                "Combining two relations"
+              ],
+              "answer": "B",
+              "explanation": "A hash function computes a bucket address from a search-key value."
+            },
+            {
+              "q": "What is a bucket in a hash file?",
+              "options": [
+                "A SQL constraint",
+                "A query plan",
+                "A storage location that can hold one or more records",
+                "A B-tree root"
+              ],
+              "answer": "C",
+              "explanation": "A bucket is the unit or page area to which records are assigned by the hash function."
+            },
+            {
+              "q": "What is a hash collision?",
+              "options": [
+                "Two different keys map to the same bucket",
+                "A transaction reads its own update",
+                "A table has no primary key",
+                "A query returns no rows"
+              ],
+              "answer": "A",
+              "explanation": "A collision occurs when distinct search-key values produce the same hash address."
+            },
+            {
+              "q": "What is overflow chaining in hashing?",
+              "options": [
+                "Moving every record into a B+ tree",
+                "Deleting colliding records",
+                "Sorting the buckets by date",
+                "Linking additional overflow buckets when the target bucket is full"
+              ],
+              "answer": "D",
+              "explanation": "Overflow chaining provides extra storage for records that cannot fit in their home bucket."
+            },
+            {
+              "q": "Which query type is hashing particularly effective for?",
+              "options": [
+                "A broad range search such as BETWEEN",
+                "An equality search on the hashed key",
+                "Sorting all rows by the key",
+                "Finding the minimum key in order"
+              ],
+              "answer": "B",
+              "explanation": "Hashing is designed for equality lookups; it does not naturally preserve key order for range scans."
+            },
+            {
+              "q": "Why is a basic hash index generally unsuitable for range queries?",
+              "options": [
+                "It stores every key twice",
+                "It requires a sorted file",
+                "Hashing does not preserve the ordering of search-key values",
+                "It cannot store numeric keys"
+              ],
+              "answer": "C",
+              "explanation": "Nearby key values may map to unrelated buckets, so a range cannot be scanned in key order."
+            },
+            {
+              "q": "What is static hashing?",
+              "options": [
+                "A scheme with a fixed number of primary buckets",
+                "A scheme that changes the hash function for every query",
+                "A tree with linked leaves",
+                "A method that stores no bucket addresses"
+              ],
+              "answer": "A",
+              "explanation": "Static hashing begins with a fixed bucket structure; growth may lead to overflow chains or reorganization."
+            },
+            {
+              "q": "What is dynamic hashing designed to handle?",
+              "options": [
+                "Only read-only databases",
+                "Tables with exactly one row",
+                "Queries without conditions",
+                "Growth and shrinkage of the data set by adapting the bucket structure"
+              ],
+              "answer": "D",
+              "explanation": "Dynamic hashing expands or contracts its directory or bucket organization as the file changes."
+            },
+            {
+              "q": "In extendible hashing, what does the directory contain?",
+              "options": [
+                "Only the actual record values",
+                "Pointers to buckets indexed by hash prefixes",
+                "SQL statements for updates",
+                "The list of database users"
+              ],
+              "answer": "B",
+              "explanation": "The directory uses a number of hash bits to point to the appropriate bucket."
+            },
+            {
+              "q": "What is the global depth in extendible hashing?",
+              "options": [
+                "The number of records in the largest bucket",
+                "The number of database tables",
+                "The number of hash bits used to index the directory",
+                "The number of transactions in a schedule"
+              ],
+              "answer": "C",
+              "explanation": "Global depth determines the directory size, which is typically 2 raised to the global depth."
+            },
+            {
+              "q": "What is local depth in extendible hashing?",
+              "options": [
+                "The number of hash bits that distinguish a particular bucket",
+                "The number of columns in a table",
+                "The number of pages in the buffer pool",
+                "The number of levels in a B-tree"
+              ],
+              "answer": "A",
+              "explanation": "Local depth records how many hash-prefix bits are significant for a particular bucket."
+            },
+            {
+              "q": "What is the purpose of a composite index?",
+              "options": [
+                "To index only NULL values",
+                "To index multiple tables without a join",
+                "To store multiple database backups",
+                "To use more than one column as the index search key"
+              ],
+              "answer": "D",
+              "explanation": "A composite index is built on an ordered combination of two or more columns."
+            },
+            {
+              "q": "Why can an index speed up a query but slow down data modification?",
+              "options": [
+                "Indexes eliminate all disk I/O",
+                "Insertions, deletions and updates may also require index maintenance",
+                "Indexes make tables smaller in every case",
+                "Indexes prevent transaction conflicts"
+              ],
+              "answer": "B",
+              "explanation": "The DBMS must keep index entries consistent whenever indexed data changes."
+            },
+            {
+              "q": "What is a covering index for a query?",
+              "options": [
+                "An index that contains all columns needed by that query",
+                "An index that stores the whole database backup",
+                "An index that can only be used once",
+                "An index with no search key"
+              ],
+              "answer": "A",
+              "explanation": "A covering index can satisfy the query using index data without fetching the base table rows."
+            },
+            {
+              "q": "What is the selectivity of a search condition?",
+              "options": [
+                "The number of indexes in a database",
+                "The number of pages in a disk",
+                "The fraction of rows expected to satisfy the condition",
+                "The number of transactions waiting for locks"
+              ],
+              "answer": "C",
+              "explanation": "A selective condition matches a small fraction of rows and may make an index access path attractive."
+            },
+            {
+              "q": "Which index is often useful for a column with many repeated values?",
+              "options": [
+                "An index that is never maintained",
+                "A bitmap index in workloads suited to bitmap operations",
+                "A hash index for ordered range scans",
+                "A unique index that forbids duplicates"
+              ],
+              "answer": "B",
+              "explanation": "Bitmap indexes can be effective for low-cardinality columns in suitable analytical workloads."
+            },
+            {
+              "q": "What does a unique index enforce?",
+              "options": [
+                "Every indexed key value is distinct",
+                "All rows have identical values",
+                "The table is physically sorted",
+                "The index has exactly one page"
+              ],
+              "answer": "A",
+              "explanation": "A unique index prevents two rows from having the same indexed key combination, subject to DBMS NULL rules."
+            },
+            {
+              "q": "What is index selectivity generally higher for?",
+              "options": [
+                "A gender-like column with few values",
+                "A Boolean flag",
+                "A column with one repeated value",
+                "A column with many distinct values relative to its row count"
+              ],
+              "answer": "D",
+              "explanation": "A column with many distinct values tends to have higher selectivity for equality predicates."
+            },
+            {
+              "q": "What is a full table scan?",
+              "options": [
+                "Reading only the root of an index",
+                "Reading all data pages of a table to examine its rows",
+                "Reading only the transaction log",
+                "Searching one hash bucket"
+              ],
+              "answer": "B",
+              "explanation": "A full table scan examines the table's data pages, which can be efficient when many rows are needed."
+            },
+            {
+              "q": "When might a DBMS prefer a table scan over an index lookup?",
+              "options": [
+                "When the query needs a large fraction of the table",
+                "When the table has no rows",
+                "Whenever an index exists",
+                "Only when the query contains ORDER BY"
+              ],
+              "answer": "A",
+              "explanation": "If many rows are required, repeated index lookups can cost more than reading the table sequentially."
+            },
+            {
+              "q": "What is the main trade-off when creating many indexes?",
+              "options": [
+                "More indexes always reduce storage use",
+                "More indexes remove the need for backups",
+                "Read performance may improve, but storage and update costs increase",
+                "Indexes guarantee serializable schedules"
+              ],
+              "answer": "C",
+              "explanation": "Indexes consume disk space and must be maintained during data modifications."
+            },
+            {
+              "q": "Which structure is commonly preferred for equality lookup when key order is unnecessary?",
+              "options": [
+                "A linked list",
+                "A hash index",
+                "A sequential scan of unrelated tables",
+                "A transaction wait-for graph"
+              ],
+              "answer": "B",
+              "explanation": "Hash indexes are designed for fast equality lookup, though they do not support ordered range traversal well."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

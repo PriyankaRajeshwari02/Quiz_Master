@@ -1,0 +1,567 @@
+{
+  "semester": 5,
+  "subjects": [
+    {
+      "code": "BTCS501-18",
+      "name": "Database Management Systems",
+      "modules": [
+        {
+          "number": 6,
+          "title": "Advanced Topics",
+          "questions": [
+            {
+              "q": "What is an object-oriented database?",
+              "options": [
+                "A database that stores data as objects with identity, state and behavior",
+                "A database that stores only flat text files",
+                "A database that cannot represent complex data",
+                "A database that uses only hash buckets"
+              ],
+              "answer": "A",
+              "explanation": "Object-oriented databases model persistent data using object-oriented concepts such as objects, classes and inheritance."
+            },
+            {
+              "q": "What is object identity in an object-oriented database?",
+              "options": [
+                "The object's current attribute value",
+                "A unique identity that distinguishes an object independently of its attribute values",
+                "The name of the database server",
+                "The number of indexes on the object"
+              ],
+              "answer": "B",
+              "explanation": "Object identity distinguishes objects even when two objects have identical attribute values."
+            },
+            {
+              "q": "What is encapsulation?",
+              "options": [
+                "Storing every attribute in a separate database",
+                "Combining all tables into one table",
+                "Bundling data with the operations that manipulate it and controlling access to internal details",
+                "Removing object methods"
+              ],
+              "answer": "C",
+              "explanation": "Encapsulation hides implementation details and exposes an object's behavior through defined interfaces."
+            },
+            {
+              "q": "What is inheritance in an object-oriented data model?",
+              "options": [
+                "A transaction copying a lock",
+                "A table referencing itself",
+                "A query using a subquery",
+                "A subclass acquiring properties and behavior from a superclass"
+              ],
+              "answer": "D",
+              "explanation": "Inheritance supports reuse and specialization by allowing subclasses to inherit from parent classes."
+            },
+            {
+              "q": "What is polymorphism?",
+              "options": [
+                "The ability to use a common interface with different implementations for different object types",
+                "The ability to store only one data type",
+                "A rule that all objects must have identical values",
+                "A method for encrypting records"
+              ],
+              "answer": "A",
+              "explanation": "Polymorphism lets the same operation or interface behave differently for different object classes."
+            },
+            {
+              "q": "What is a persistent object?",
+              "options": [
+                "An object that exists only during one expression",
+                "An object whose state is stored beyond the lifetime of the program that created it",
+                "An object that cannot be updated",
+                "An object without identity"
+              ],
+              "answer": "B",
+              "explanation": "Persistence allows objects to survive program termination by storing their state in durable storage."
+            },
+            {
+              "q": "What is an object-relational database?",
+              "options": [
+                "A database that supports only object files",
+                "A database without SQL",
+                "A relational database extended with object-oriented features and richer data types",
+                "A database that stores no structured data"
+              ],
+              "answer": "C",
+              "explanation": "Object-relational systems retain relational tables and add features such as user-defined types, collections or inheritance-like capabilities."
+            },
+            {
+              "q": "Which feature is commonly associated with object-relational databases?",
+              "options": [
+                "Only fixed-length character fields",
+                "No support for constraints",
+                "No support for SQL",
+                "User-defined types"
+              ],
+              "answer": "D",
+              "explanation": "Object-relational DBMSs may allow users to define structured types beyond basic built-in types."
+            },
+            {
+              "q": "What is a user-defined type (UDT)?",
+              "options": [
+                "A type created by a database designer to represent application-specific data",
+                "A type that can store only NULL",
+                "A database backup format",
+                "A transaction isolation level"
+              ],
+              "answer": "A",
+              "explanation": "UDTs let database schemas model structured or specialized values that are meaningful to an application."
+            },
+            {
+              "q": "What is a collection type in an object-relational database?",
+              "options": [
+                "A type that stores only one integer",
+                "A type that can represent a group of values, such as an array or nested collection",
+                "A type used only for passwords",
+                "A type that replaces every relation"
+              ],
+              "answer": "B",
+              "explanation": "Collection types represent multiple related values as a single structured attribute or value, depending on DBMS support."
+            },
+            {
+              "q": "What is a logical database?",
+              "options": [
+                "A physical disk partition",
+                "A database stored only on a web browser",
+                "A database representation organized around logical data structures rather than physical storage details",
+                "A transaction log"
+              ],
+              "answer": "C",
+              "explanation": "The logical view describes data organization and relationships without specifying exactly how bytes are stored on disk."
+            },
+            {
+              "q": "What does a logical data model describe?",
+              "options": [
+                "The exact physical sector number of each row",
+                "The brand of storage device",
+                "The CPU instruction set",
+                "Entities, attributes, relationships and constraints relevant to the data"
+              ],
+              "answer": "D",
+              "explanation": "A logical model represents the data requirements and structure independently of low-level storage details."
+            },
+            {
+              "q": "What is a physical data model concerned with?",
+              "options": [
+                "How data is implemented and stored, including tables, indexes and storage details",
+                "Only business vocabulary",
+                "Only user interface colors",
+                "Only the names of application users"
+              ],
+              "answer": "A",
+              "explanation": "A physical model describes implementation choices such as data types, indexes, partitions and storage organization."
+            },
+            {
+              "q": "What is a web database application?",
+              "options": [
+                "A database that can only be accessed by a local keyboard",
+                "An application in which a web interface communicates with a database through an application or server layer",
+                "A database without users",
+                "A database that stores only HTML files"
+              ],
+              "answer": "B",
+              "explanation": "A web application commonly sends requests to a server, which applies application logic and queries the database."
+            },
+            {
+              "q": "Why should a web browser generally not connect directly to a database using privileged credentials?",
+              "options": [
+                "Browsers cannot display tables",
+                "It makes SQL syntax invalid",
+                "It exposes credentials and bypasses important server-side controls",
+                "It prevents HTML from loading"
+              ],
+              "answer": "C",
+              "explanation": "A server-side layer protects credentials, validates requests and enforces authorization before database access."
+            },
+            {
+              "q": "What is the role of an application server in a web database system?",
+              "options": [
+                "To replace the database with a monitor",
+                "To store only browser history",
+                "To provide network cabling",
+                "To process client requests and coordinate application logic and database operations"
+              ],
+              "answer": "D",
+              "explanation": "The application server mediates between clients and the database, applying business rules and security checks."
+            },
+            {
+              "q": "What is a three-tier web architecture?",
+              "options": [
+                "Presentation tier, application tier and data tier",
+                "Three database tables with the same name",
+                "Three copies of each password",
+                "Three indexes on every column"
+              ],
+              "answer": "A",
+              "explanation": "Three-tier architecture separates the user interface, application logic and data management responsibilities."
+            },
+            {
+              "q": "What is the presentation tier responsible for?",
+              "options": [
+                "Managing disk page replacement",
+                "Displaying information and accepting user interaction",
+                "Enforcing B-tree split rules",
+                "Writing transaction log records"
+              ],
+              "answer": "B",
+              "explanation": "The presentation tier is the user-facing layer through which people interact with the application."
+            },
+            {
+              "q": "What is the data tier responsible for?",
+              "options": [
+                "Rendering web pages",
+                "Validating button colors",
+                "Storing and retrieving persistent application data",
+                "Managing browser tabs"
+              ],
+              "answer": "C",
+              "explanation": "The data tier manages persistence, commonly through a database management system."
+            },
+            {
+              "q": "What is a distributed database?",
+              "options": [
+                "A database stored in one table only",
+                "A database with no network communication",
+                "A collection of unrelated spreadsheets",
+                "A logically related database whose data is stored across multiple networked sites"
+              ],
+              "answer": "D",
+              "explanation": "A distributed database presents a unified data system even though data is physically located at multiple sites."
+            },
+            {
+              "q": "What is a distributed DBMS?",
+              "options": [
+                "Software that manages a distributed database and coordinates access across sites",
+                "A tool used only to draw ER diagrams",
+                "A local text editor",
+                "A program that only compresses files"
+              ],
+              "answer": "A",
+              "explanation": "A distributed DBMS coordinates data storage, queries, transactions and other database functions across sites."
+            },
+            {
+              "q": "What is data fragmentation in a distributed database?",
+              "options": [
+                "Encrypting every relation",
+                "Dividing a relation into smaller pieces for storage at different sites",
+                "Deleting duplicate users",
+                "Combining all indexes into one"
+              ],
+              "answer": "B",
+              "explanation": "Fragmentation partitions data into pieces that can be placed at different locations."
+            },
+            {
+              "q": "What is horizontal fragmentation?",
+              "options": [
+                "Splitting a relation by columns",
+                "Copying the database log",
+                "Dividing a relation into subsets of rows",
+                "Converting a table into an object"
+              ],
+              "answer": "C",
+              "explanation": "Horizontal fragmentation divides tuples according to predicates, with each fragment containing selected rows."
+            },
+            {
+              "q": "What is vertical fragmentation?",
+              "options": [
+                "Dividing a relation into subsets of rows",
+                "Sorting rows by primary key",
+                "Replicating every page",
+                "Dividing a relation into subsets of columns, typically retaining a key for reconstruction"
+              ],
+              "answer": "D",
+              "explanation": "Vertical fragmentation separates attributes into groups and uses a common key to reconstruct the original relation."
+            },
+            {
+              "q": "What is replication in a distributed database?",
+              "options": [
+                "Maintaining copies of data at multiple sites",
+                "Splitting one column into smaller values",
+                "Removing all remote access",
+                "Replacing tables with views"
+              ],
+              "answer": "A",
+              "explanation": "Replication stores copies of data at multiple locations to improve availability or read performance."
+            },
+            {
+              "q": "What is one potential disadvantage of replication?",
+              "options": [
+                "It makes all data disappear",
+                "Updates must be coordinated to keep copies consistent",
+                "It prevents read operations",
+                "It eliminates network traffic"
+              ],
+              "answer": "B",
+              "explanation": "Replicated copies can become inconsistent unless updates are propagated and coordinated correctly."
+            },
+            {
+              "q": "What is data transparency in a distributed DBMS?",
+              "options": [
+                "Users must manually locate every disk sector",
+                "Users must write a separate query for every copy",
+                "The system hides certain distribution details from users and applications",
+                "The system reveals all passwords"
+              ],
+              "answer": "C",
+              "explanation": "Transparency makes distributed data appear more unified by hiding details such as location or fragmentation."
+            },
+            {
+              "q": "What is location transparency?",
+              "options": [
+                "Users must know each fragment's physical address",
+                "All data must be stored at one site",
+                "Every query must specify a server name",
+                "Users can access data without knowing the site where it is physically stored"
+              ],
+              "answer": "D",
+              "explanation": "Location transparency hides the physical site or network location of data from the user."
+            },
+            {
+              "q": "What is fragmentation transparency?",
+              "options": [
+                "Users can query a relation without knowing how it has been divided into fragments",
+                "Users must combine every fragment manually",
+                "Users must know the disk format",
+                "Users can access only one fragment"
+              ],
+              "answer": "A",
+              "explanation": "Fragmentation transparency hides the distribution of a relation into horizontal or vertical fragments."
+            },
+            {
+              "q": "What is replication transparency?",
+              "options": [
+                "Users must choose a replica for every read",
+                "The system hides the existence of multiple copies from users",
+                "The system prevents copies from being updated",
+                "The system stores only one copy"
+              ],
+              "answer": "B",
+              "explanation": "Replication transparency lets users work with logical data without managing which replica is used."
+            },
+            {
+              "q": "What is a distributed transaction?",
+              "options": [
+                "A transaction that accesses only a local variable",
+                "A transaction that cannot commit",
+                "A transaction whose operations may involve data at more than one site",
+                "A transaction that has no read or write operations"
+              ],
+              "answer": "C",
+              "explanation": "A distributed transaction coordinates work across multiple database sites and must handle failures and consistency."
+            },
+            {
+              "q": "What is the purpose of two-phase commit (2PC)?",
+              "options": [
+                "To balance a B-tree",
+                "To encrypt communication",
+                "To divide a relation vertically",
+                "To coordinate an atomic commit decision among distributed participants"
+              ],
+              "answer": "D",
+              "explanation": "2PC uses prepare and decision phases so participants can agree to commit or abort a distributed transaction."
+            },
+            {
+              "q": "Which are the two main phases of two-phase commit?",
+              "options": [
+                "Prepare (voting) and commit/abort decision",
+                "Read and write",
+                "Parse and optimize",
+                "Fragment and replicate"
+              ],
+              "answer": "A",
+              "explanation": "The coordinator first asks participants to prepare and vote, then communicates the final commit or abort decision."
+            },
+            {
+              "q": "What is a coordinator's role in 2PC?",
+              "options": [
+                "To store every user's password",
+                "To initiate the protocol, collect participant votes and communicate the decision",
+                "To create all indexes",
+                "To split every relation into columns"
+              ],
+              "answer": "B",
+              "explanation": "The coordinator manages the protocol and determines the global outcome from participant responses."
+            },
+            {
+              "q": "What is a potential drawback of two-phase commit?",
+              "options": [
+                "It never uses network messages",
+                "It permits participants to decide independently",
+                "Participants may remain blocked while waiting for the coordinator or a final decision",
+                "It cannot support distributed transactions"
+              ],
+              "answer": "C",
+              "explanation": "2PC can block if failures occur after participants prepare but before they learn the final outcome."
+            },
+            {
+              "q": "What is a distributed query?",
+              "options": [
+                "A query that can access only one local variable",
+                "A query that never reads data",
+                "A query that always deletes records",
+                "A query whose execution may access data stored at multiple sites"
+              ],
+              "answer": "D",
+              "explanation": "A distributed query plan coordinates operations over data located at different networked sites."
+            },
+            {
+              "q": "Why is query optimization important in a distributed database?",
+              "options": [
+                "Communication cost and data transfer can be significant",
+                "Network bandwidth is always unlimited",
+                "Every site has identical data",
+                "Queries cannot use indexes"
+              ],
+              "answer": "A",
+              "explanation": "Reducing data transferred across the network can substantially improve distributed query performance."
+            },
+            {
+              "q": "What is a distributed database's site?",
+              "options": [
+                "A SQL aggregate function",
+                "A computer or node participating in the distributed system",
+                "A column constraint",
+                "A B-tree leaf pointer"
+              ],
+              "answer": "B",
+              "explanation": "A site is a location or node that stores data or provides processing in the distributed database."
+            },
+            {
+              "q": "What is a homogeneous distributed database system?",
+              "options": [
+                "A system with unrelated DBMS products at every site",
+                "A system with no shared schema",
+                "A system in which participating sites use the same DBMS software or data model",
+                "A system that stores data only on paper"
+              ],
+              "answer": "C",
+              "explanation": "Homogeneous systems use a common DBMS environment across participating sites."
+            },
+            {
+              "q": "What is a heterogeneous distributed database system?",
+              "options": [
+                "A system in which every site must use identical DBMS software",
+                "A system with no network",
+                "A system with one local table",
+                "A system in which sites may use different DBMS products, data models or schemas"
+              ],
+              "answer": "D",
+              "explanation": "Heterogeneous systems integrate sites with different database technologies or representations."
+            },
+            {
+              "q": "What is a federated database system?",
+              "options": [
+                "A system that provides integrated access to multiple autonomous databases",
+                "A single table with no constraints",
+                "A database that stores only images",
+                "A system that disables remote queries"
+              ],
+              "answer": "A",
+              "explanation": "A federation provides a unified access layer while participating databases may retain some autonomy."
+            },
+            {
+              "q": "What does database autonomy mean in a federated system?",
+              "options": [
+                "All sites must be controlled by one application",
+                "A participating database can retain control over its local operations and data",
+                "Every site must share the same password",
+                "No site can change its schema"
+              ],
+              "answer": "B",
+              "explanation": "Autonomy means local databases retain some independence in administration and operation."
+            },
+            {
+              "q": "What is a cloud database?",
+              "options": [
+                "A database that can exist only without a network",
+                "A database stored exclusively on a personal USB drive",
+                "A database service hosted on cloud infrastructure and accessed over a network",
+                "A database without backup support"
+              ],
+              "answer": "C",
+              "explanation": "Cloud databases run on provider-managed or cloud-hosted infrastructure and are accessed through network services."
+            },
+            {
+              "q": "What is database scalability?",
+              "options": [
+                "The ability to remove all constraints",
+                "The ability to use only one user account",
+                "The ability to run without storage",
+                "The ability to handle increased workload by adding or using resources effectively"
+              ],
+              "answer": "D",
+              "explanation": "Scalability describes how a system accommodates growth in users, data volume or request rate."
+            },
+            {
+              "q": "What is horizontal scaling?",
+              "options": [
+                "Adding more machines or nodes to share the workload",
+                "Increasing only the RAM of one machine",
+                "Reducing the number of database replicas",
+                "Removing the application server"
+              ],
+              "answer": "A",
+              "explanation": "Horizontal scaling adds nodes to distribute processing or storage across multiple machines."
+            },
+            {
+              "q": "What is vertical scaling?",
+              "options": [
+                "Adding many independent database sites",
+                "Increasing resources such as CPU, RAM or storage on a single machine",
+                "Splitting a table into rows",
+                "Creating more user roles"
+              ],
+              "answer": "B",
+              "explanation": "Vertical scaling increases the capacity of an individual server by adding or upgrading its resources."
+            },
+            {
+              "q": "What is a key concern in distributed database design?",
+              "options": [
+                "Choosing a website font",
+                "Avoiding all indexes",
+                "Balancing data placement, availability, consistency and communication costs",
+                "Removing transaction management"
+              ],
+              "answer": "C",
+              "explanation": "Distributed design must consider where data resides, how copies stay consistent and how sites communicate."
+            },
+            {
+              "q": "What is schema integration in a heterogeneous distributed database?",
+              "options": [
+                "Deleting all local schemas",
+                "Converting every database to a flat file",
+                "Disabling queries across sites",
+                "Reconciling differences among local schemas to provide a unified representation"
+              ],
+              "answer": "D",
+              "explanation": "Schema integration resolves naming, structure and representation differences among participating databases."
+            },
+            {
+              "q": "What is a distributed database catalog?",
+              "options": [
+                "Metadata describing distributed data, schemas, locations and related information",
+                "A list of web browser bookmarks",
+                "A transaction that updates every row",
+                "A physical network cable"
+              ],
+              "answer": "A",
+              "explanation": "A catalog helps the distributed DBMS locate data and understand the schemas and placement of distributed objects."
+            },
+            {
+              "q": "What is the CAP theorem commonly used to discuss?",
+              "options": [
+                "The syntax of SQL joins",
+                "Trade-offs among consistency, availability and partition tolerance in distributed systems",
+                "B-tree node capacity",
+                "The difference between DDL and DML"
+              ],
+              "answer": "B",
+              "explanation": "CAP describes limits on simultaneously guaranteeing consistency and availability when a network partition occurs."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
